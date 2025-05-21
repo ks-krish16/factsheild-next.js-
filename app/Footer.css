@@ -1,0 +1,82 @@
+.working {
+    padding: 5rem 5%;
+    text-align: center;
+    position: relative;
+}
+
+.sectionTitle {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(45deg, #fff, #6220fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: inline-block;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #6220fb, transparent);
+}
+
+.stepsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.step {
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.stepNumber {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #6220fb, #4910c0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(98, 32, 251, 0.3);
+}
+
+.step:hover .stepNumber {
+    transform: scale(1.1);
+}
+
+.step h3 {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.step:hover h3 {
+    color: #6220fb;
+}
+
+.step p {
+    color: rgb(170, 169, 169);
+    transition: color 0.3s ease;
+}
+
+.step:hover p {
+    color: rgb(200, 200, 200);
+}

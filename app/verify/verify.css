@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background: #000;
+    color: white;
+    line-height: 1.6;
+}
+.verifyContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 120px 20px 40px;
+}
+
+.verifyHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.verifyHeader h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #fff, #6220fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.verifyHeader p {
+    color: #999;
+    font-size: 1.2rem;
+}
+
+/* Input Section */
+.inputSection {
+    margin-bottom: 3rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1rem;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #6220fb;
+    box-shadow: 0 0 20px rgba(98, 32, 251, 0.2);
+}
+
+.analyzeBtn {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(45deg, #6220fb, #4910c0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.analyzeBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(98, 32, 251, 0.3);
+}
+
+.btnShine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.analyzeBtn:hover .btn-shine {
+    left: 100%;
+}
+
+/* Score Card */
+.scoreCard {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.scoreCard.hidden {
+    display: none;
+}
+
+.scoreHeader {
+    margin-bottom: 2rem;
+}
+
+.shieldIcon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    position: relative;
+}
+
+.shield {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.shield::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 50px;
+    background: #6220fb;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.shield-inner {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.scoreHeader h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.scoreHeader p {
+    color: #999;
+}
+
+.scoreDisplay {
+    margin: 2rem 0;
+}
+
+.scoreRing {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border: 8px solid #6220fb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: rgba(98, 32, 251, 0.1);
+}
+
+.scoreValue {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.scoreMessage {
+    color: #999;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Score Card States */
+.scoreCard.reliable {
+    border-color: rgba(98, 251, 32, 0.3);
+}
+
+.scoreCard.reliable .shield::before {
+    background: #62fb20;
+}
+
+.scoreCard.reliable .score-ring {
+    border-color: #62fb20;
+    background: rgba(98, 251, 32, 0.1);
+}
+
+.scoreCard.partial {
+    border-color: rgba(251, 176, 32, 0.3);
+}
+
+.scoreCard.partial .shield::before {
+    background: #fbb020;
+}
+
+.scoreCard.partial .score-ring {
+    border-color: #fbb020;
+    background: rgba(251, 176, 32, 0.1);
+}
+
+.scoreCard.unreliable {
+    border-color: rgba(251, 32, 32, 0.3);
+}
+
+.scoreCard.unreliable .shield::before {
+    background: #fb2020;
+}
+
+.scoreCard.unreliable .score-ring {
+    border-color: #fb2020;
+    background: rgba(251, 32, 32, 0.1);
+}
